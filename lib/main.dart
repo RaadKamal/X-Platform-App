@@ -64,9 +64,13 @@ class _MyHomePageState extends State<MyHomePage> {
            IconButton(
             icon: const Icon(
               Icons.shopping_cart,
-              color: Colors.black,),
+              color: Colors.black,
+              size: 40,
 
-           )      
+           ),
+            onPressed: () {
+              // Handle shopping cart button press
+            },
         ],
       
       ),
