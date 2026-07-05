@@ -71,14 +71,44 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: () {
               // Handle shopping cart button press
             },
+           )
         ],
       
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: .center,
-          children: [
-           
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>
+           [
+            Row(children: [
+              const Spacer(),
+              const Spacer(),
+              Image.asset(
+                height: 200,
+                width: 150,
+                )
+              consr SizedBox(width: 40),
+              Expanded(child: Column(
+                children: [
+                  const Text ("Bag", style: TextStyle(fontSize: 40)),
+                  const SizedBox(height: 20),
+                  TextButton(onPressed: onPressed(){
+                    setState(() {
+                      _Model.numberOfBags++;
+                    });
+                  },
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue),                 
+                    foregroundColor: MaterialStatePropertyAll<Color>(Colors.white),            
+                  ),
+                  child: const Text("Add to Cart")
+                  style: TextStyle(fontSize: 15)
+                  ),
+                 )
+                ],
+              ),
+              )
+            
           ],
         ),
       ),
