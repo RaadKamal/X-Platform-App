@@ -76,6 +76,11 @@ class _MyHomePageState extends State<MyHomePage> {
       
       ),
       body: Center(
+        floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>
@@ -101,22 +106,57 @@ class _MyHomePageState extends State<MyHomePage> {
                     backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue),                 
                     foregroundColor: MaterialStatePropertyAll<Color>(Colors.white),            
                   ),
-                  child: const Text("Add to Cart")
+                  child: const Text("Add to Cart",
                   style: TextStyle(fontSize: 15)
                   ),
                  )
                 ],
               ),
-              )
+              ),
+              const Spacer(),
+              const Spacer()
             
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+        const SizedBox(height: 50,),
+        Row(
+          children: [
+            const Spacer(),
+            const Spacer(),
+            Image.asset("images/items2.jpg",
+              height: 200,
+              width: 150,
+            ),
+            const SizedBox(width: 40),
+            Expanded(
+              child: Column(children:[
+                const Text(
+                  "Ring",
+                  style:TextStyle(fontSize: 40)
+                ),
+                const SizedBox(height: 20,),
+                TextButton(
+                  onPressed:(){
+                    setState(() {
+                      //Model.numberOfRings++;
+                    });
+                  },
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll<Color>(Colors.blue),
+                    foregroundColor: MaterialStatePropertyAll<Color>(Colors.white),
+                  ),
+                  child:const Text(
+                    "Add to Cart",
+                    style: TextStyle(fontSize: 15)
+                ),
+                )
+              ],
+              )
+            ),
+            const Spacer(),
+            const Spacer()
+          ]
+        )      ),
     );
   }
 }
